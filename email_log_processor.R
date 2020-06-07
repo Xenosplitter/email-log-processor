@@ -3,11 +3,6 @@
 
 # File for finding beginning and ending of emails for a given bank
 
-rm(list = ls()) # clean environment
-
-# manage what knits install.packages("tidyverse")
-knitr::opts_chunk$set(echo = T, error = F, warning = F)
-
 # load libraries for later use
 library(tidyverse)
 library(ggthemes)
