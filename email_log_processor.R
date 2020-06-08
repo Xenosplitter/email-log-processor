@@ -2,11 +2,16 @@
 # Find me on GitHub: https://github.com/Xenosplitter
 
 # File for finding beginning and ending of emails for a given bank
+print("Starting Script...")
+
+# Install missing packages
+list.of.packages <- c("dplyr", "readr", "lubridate")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
 
 # load libraries for later use
-library(tidyverse)
-library(ggthemes)
-library(scales)
+library(dplyr)
+library(readr)
 library(lubridate)
 
 # load in data for later use
@@ -31,3 +36,5 @@ new_emails = start_end %>%
 new_emails = new_emails[,c(1,2,5,3,6,4)]
 
 write.csv(new_emails, "processed_email_logs.csv")
+
+print("Finished!")
